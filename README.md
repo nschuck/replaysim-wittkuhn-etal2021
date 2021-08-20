@@ -14,11 +14,28 @@ Wittkuhn, L., Chien, S., Hall-McMaster, S., and Schuck, N. W. (2021). *Replay in
 
 ### Make
 
+You can also run the code using `make` by running the following command.
+
 ```bash
 make all
 ```
 
 ### Docker
+
+We've created a Docker container (see [Dockerfile](Dockerfile)) and [uploaded it](https://hub.docker.com/r/lennartwittkuhn/replaysim-wittkuhn-etal2021) to dockerhub.
+
+#### Running the container
+
+You can run the `make` command inside the Docker container:
+
+```bash
+docker run --rm -v $PWD:/home lennartwittkuhn/replaysim-wittkuhn-etal2021 /bin/sh -c "cd /home; make all"
+```
+
+#### Building the container
+
+The commands below were used by us to create the container.
+They are listed here for documentation purposes.
 
 ```bash
 docker login
@@ -30,8 +47,4 @@ docker build -t lennartwittkuhn/replaysim-wittkuhn-etal2021:latest .
 
 ```bash
 docker push lennartwittkuhn/replaysim-wittkuhn-etal2021:latest
-```
-
-```bash
-docker run --rm -v $PWD:/home lennartwittkuhn/replaysim-wittkuhn-etal2021 /bin/sh -c "cd /home; make all"
 ```
