@@ -13,5 +13,4 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: page
           path: figure1
