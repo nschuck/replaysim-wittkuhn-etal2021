@@ -3,7 +3,7 @@
 # Very simple instantiation of backward replay at end of episode/trial
 # Start position can be random
 
-## Written by Nicolas Schuck, Jan 2021 
+## Written by Nicolas Schuck, Jan 2021
 
 require(viridis)
 source('gen_functions.R')
@@ -145,8 +145,8 @@ for (i in 1:3) {
 }
 legend('topright', legend = c('No replay', 'Replay (1x)', 'Replay (5x)'), lty = 1, lwd = 3, bty = 'n', col = viridis(10, option = 'E')[c(1, 7, 10)], cex = 1.2)
 dev.off()
-dim(nsteps)
-colMeans(apply(nsteps, c(2, 3), function(x) min(which(x<50))))
+#dim(nsteps)
+#colMeans(apply(nsteps, c(2, 3), function(x) min(which(x < 50))))
 
 #### PLOT REWARD RATE
 pdf("figure1/fig1d_meanreward.pdf")
