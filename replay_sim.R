@@ -6,8 +6,8 @@
 ## Written by Nicolas Schuck, Jan 2021 
 
 require(viridis)
-source('/gdrive/workbench/R/tools/misc/gen_functions.R')
-make_transitionmat = dget('/gdrive/workbench/gitrepos/replay_review_simulations/make_transitionmat.R')
+source('gen_functions.R')
+make_transitionmat = dget('make_transitionmat.R')
 # environment
 maze = NULL
 maze$nactions = 4 # left right up down
