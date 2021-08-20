@@ -135,6 +135,7 @@ for (replaylevel in 1:length(nreplays)) { # the same Q learner with different am
 	cat(paste('| \n'))
 }
 
+pdf("figure1/fig1c_numsteps.pdf")
 ### PLOT PERFORMANCE
 cmeans = apply(nsteps, c(1, 3), mean, na.rm = TRUE)
 csds = apply(nsteps, c(1, 3), std.error)
@@ -143,11 +144,12 @@ for (i in 1:3) {
 	se_shadows(1:nepisodes, cmeans[,i], csds[,i], ccol = viridis(10, option = 'E', alpha = 0.2)[c(1, 7, 10)[i]])
 }
 legend('topright', legend = c('No replay', 'Replay (1x)', 'Replay (5x)'), lty = 1, lwd = 3, bty = 'n', col = viridis(10, option = 'E')[c(1, 7, 10)], cex = 1.2)
-
+dev.off()
 dim(nsteps)
 colMeans(apply(nsteps, c(2, 3), function(x) min(which(x<50))))
 
 #### PLOT REWARD RATE
+pdf("figure1/fig1d_meanreward.pdf")
 cmeans = apply(avgrew, c(1, 3), mean)
 csds = apply(avgrew, c(1, 3), std.error)
 matplot(cmeans, type = 'l', col = viridis(10, option = 'E')[c(1, 7, 10)], lty = 1, lwd = 2, bty = 'n', cex.axis = 1.2, cex.lab = 1.2, ylab = 'Mean reward collected', xlab = 'Episode')
@@ -155,3 +157,4 @@ for (i in 1:3) {
 	se_shadows(1:nepisodes, cmeans[,i], csds[,i], ccol = viridis(10, option = 'E', alpha = 0.2)[c(1, 7, 10)[i]])
 }
 legend('bottomright', legend = c('No replay', 'Replay (1x)', 'Replay (5x)'), lty = 1, lwd = 3, bty = 'n', col = viridis(10, option = 'E')[c(1, 7, 10)], cex = 1.2)
+dev.off()
