@@ -1,5 +1,7 @@
 # Replay Simulations
 
+![main workflow](https://github.com/nschuck/replaysim-wittkuhn-etal2021/actions/workflows/main.yml/badge.svg)
+
 Code for Review illustration in Wittkuhn, Chien, McMaster, Schuck
 
 ## Citation
