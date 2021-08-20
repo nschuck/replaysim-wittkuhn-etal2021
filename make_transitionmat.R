@@ -71,6 +71,7 @@ make_transitionmat = function(maze, show_maze = TRUE) {
 		tmp[tmp == 0] = NA
 		tmp[maze$wall] = NA
 		image(tmp, col = hcl.colors(20, 'Blue-Red 2'), axes = FALSE)
+		maze$cmaze = cmaze
 
 	}
 
