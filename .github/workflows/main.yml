@@ -1,0 +1,17 @@
+name: Build
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container:
+      image: lennartwittkuhn/replaysim-wittkuhn-etal2021
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install and Build
+        run: make all
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: page
+          path: figure1
