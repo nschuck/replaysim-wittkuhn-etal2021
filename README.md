@@ -32,6 +32,9 @@ You can run the `make` command inside the Docker container:
 docker run --rm -v $PWD:/home lennartwittkuhn/replaysim-wittkuhn-etal2021 /bin/sh -c "cd /home; make all"
 ```
 
+The figures created by the simulation can be retrieved as Build Artifacts.
+Search the latest executed workflow and Build Artifacts [here](https://github.com/lnnrtwttkhn/replaysim-wittkuhn-etal2021/actions/) to download the figures.
+
 #### Building the container
 
 The commands below were used by us to create the container.
